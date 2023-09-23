@@ -38,6 +38,8 @@ def calculate_tax(income : float, regime : str, age : int) -> float :
             (1000000, 500000, 0.2),  # 20% tax on income between Rs. 5 lakh to Rs. 10 lakh
             (float('inf'), 1000000, 0.3)  # 30% tax on income above Rs. 10 lakh
             ]
+        if taxable_income <= 500000:
+            return 0
 
     elif regime == "new":
         standard_deduction = 0 # No standard deduction
